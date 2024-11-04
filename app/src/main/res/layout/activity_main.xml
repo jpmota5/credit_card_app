@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+
+        <!-- Cartão de crédito centralizado e maior -->
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_gravity="center">
+
+        <!-- Ícone do cartão, maior e no canto superior esquerdo -->
+        <ImageView
+            android:id="@+id/cardIcon"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_credit_card"
+            android:contentDescription="Ícone de cartão de crédito"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <!-- Ícone do chip, alinhado no canto superior direito -->
+        <ImageView
+            android:id="@+id/chipIcon"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_chip"
+            android:contentDescription="Ícone de chip"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <!-- Número do cartão com formatação -->
+        <EditText
+            android:id="@+id/cardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número do cartão"
+            android:maxLength="19"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
+
+        <!-- Data de validade e CVV em linha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp">
+
+            <!-- Data de validade com formatação automática -->
+            <EditText
+                android:id="@+id/expiryDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="MM/AA"
+                android:maxLength="5"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@android:color/transparent"
+                android:padding="8dp" />
+
+            <!-- CVV -->
+            <EditText
+                android:id="@+id/cvv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="CVV"
+                android:maxLength="3"
+                android:inputType="numberPassword"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
